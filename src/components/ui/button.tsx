@@ -1,0 +1,50 @@
+import type {
+  ButtonProps as ChakraButtonProps,
+  RecipeVariantProps,
+} from "@chakra-ui/react";
+import {
+  AbsoluteCenter,
+  Button as ChakraButton,
+  Span,
+  Spinner,
+} from "@chakra-ui/react";
+import { forwardRef } from "react";
+
+import { buttonRecipe } from "theme/recipes/button.recipe";
+
+type ButtonVariantProps = RecipeVariantProps<typeof buttonRecipe>;
+
+interface ButtonLoadingProps {
+  loading?: boolean;
+  loadingText?: React.ReactNode;
+}
+
+export interface ButtonProps
+  extends Omit<ChakraButtonProps, "size">,
+    ButtonLoadingProps,
+    React.PropsWithChildren<ButtonVariantProps> {}
+
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  function Button(props, ref) {
+    const { loading, disabled, loadingText, children, ...rest } = props;
+    return (
+      <ChakraButton disabled={loading || disabled} ref={ref} {...rest}>
+        {loading && !loadingText ? (
+          <>
+            <AbsoluteCenter display="inline-flex">
+              <Spinner size="inherit" color="inherit" />
+            </AbsoluteCenter>
+            <Span opacity={0}>{children}</Span>
+          </>
+        ) : loading && loadingText ? (
+          <>
+            <Spinner size="inherit" color="inherit" />
+            {loadingText}
+          </>
+        ) : (
+          children
+        )}
+      </ChakraButton>
+    );
+  }
+);

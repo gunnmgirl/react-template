@@ -1,4 +1,4 @@
-import { Button } from "components/ui";
+import { Button, Checkbox } from "components/ui";
 import { DashboardLayout } from "layouts";
 
 function App() {
@@ -13,6 +13,8 @@ function App() {
       <Button variant="outline" size="sm">
         Small Outline Button
       </Button>
+
+      <Checkbox />
     </DashboardLayout>
   );
 }

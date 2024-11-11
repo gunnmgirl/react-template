@@ -30,16 +30,6 @@ const config = defineConfig({
       lg: "960px",
       xl: "1200px",
     },
-    tokens: {
-      colors: {
-        red: { value: "#EE0F0F" },
-      },
-    },
-    semanticTokens: {
-      colors: {
-        danger: { value: "{colors.red}" },
-      },
-    },
     keyframes: {
       spin: {
         from: { transform: "rotate(0deg)" },

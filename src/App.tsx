@@ -1,5 +1,5 @@
 import { Button } from "components/ui/Button";
-import { DashboardLayout } from "layout";
+import { DashboardLayout } from "layouts";
 
 function App() {
   return (

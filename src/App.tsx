@@ -13,8 +13,6 @@ function App() {
       <Button variant="outline" size="sm">
         Small Outline Button
       </Button>
-
-      <Checkbox />
     </DashboardLayout>
   );
 }

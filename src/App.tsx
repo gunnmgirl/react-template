@@ -1,8 +1,9 @@
 import { Button } from "components/ui/Button";
+import { DashboardLayout } from "layout";
 
 function App() {
   return (
-    <div>
+    <DashboardLayout>
       {/* Example with "solid" variant and "lg" size */}
       <Button variant="solid" size="lg" loading>
         Large Solid Button
@@ -12,10 +13,7 @@ function App() {
       <Button variant="outline" size="sm">
         Small Outline Button
       </Button>
-
-      {/* Example with custom "danger" variant */}
-      <Button visual="danger">Danger Button</Button>
-    </div>
+    </DashboardLayout>
   );
 }
 

@@ -1,7 +1,4 @@
-import type {
-  ButtonProps as ChakraButtonProps,
-  RecipeVariantProps,
-} from "@chakra-ui/react";
+import type { ButtonProps as ChakraButtonProps } from "@chakra-ui/react";
 import {
   AbsoluteCenter,
   Button as ChakraButton,
@@ -10,19 +7,12 @@ import {
 } from "@chakra-ui/react";
 import { forwardRef } from "react";
 
-import { buttonRecipe } from "theme/recipes/button.recipe";
-
-type ButtonVariantProps = RecipeVariantProps<typeof buttonRecipe>;
-
 interface ButtonLoadingProps {
   loading?: boolean;
   loadingText?: React.ReactNode;
 }
 
-export interface ButtonProps
-  extends Omit<ChakraButtonProps, "size">,
-    ButtonLoadingProps,
-    React.PropsWithChildren<ButtonVariantProps> {}
+export interface ButtonProps extends ChakraButtonProps, ButtonLoadingProps {}
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   function Button(props, ref) {

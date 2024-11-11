@@ -1,8 +1,6 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 import { defineTextStyles } from "@chakra-ui/react";
 
-import { buttonRecipe } from "theme/recipes/button.recipe";
-
 export const textStyles = defineTextStyles({
   body: {
     description: "The body text style - used in paragraphs",
@@ -26,9 +24,6 @@ const config = defineConfig({
     },
   },
   theme: {
-    recipes: {
-      button: buttonRecipe,
-    },
     breakpoints: {
       sm: "320px",
       md: "768px",

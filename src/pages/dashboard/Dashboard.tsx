@@ -1,7 +1,5 @@
 import { Container } from "@chakra-ui/react";
 
-function App() {
+export const Dashboard = () => {
   return <Container></Container>;
-}
-
-export default App;
+};

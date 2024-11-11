@@ -1,7 +1,5 @@
 import { Container } from "@chakra-ui/react";
 
-function App() {
+export const Login = () => {
   return <Container></Container>;
-}
-
-export default App;
+};

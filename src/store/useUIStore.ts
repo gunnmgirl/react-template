@@ -1,9 +1,6 @@
 import { create } from "zustand";
 
-interface UIState {
-  isSidebarOpen: boolean;
-  toggleSidebar: () => void;
-}
+import { UIState } from "types";
 
 const useUIStore = create<UIState>((set) => ({
   isSidebarOpen: false,

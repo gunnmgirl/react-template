@@ -3,7 +3,7 @@ import {
   AbsoluteCenter,
   Button as ChakraButton,
   Span,
-  Spinner,
+  Spinner
 } from "@chakra-ui/react";
 import { forwardRef } from "react";
 

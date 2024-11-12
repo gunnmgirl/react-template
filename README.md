@@ -1,46 +1,95 @@
-# Getting Started with Create React App
+# React Template
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React template is a starter project designed to streamline the development process. It includes setup for Chakra UI, React Query, Zustand, Axios, and React Router, along with theming, layout components, and routing for authenticated and dashboard pages.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Chakra UI**: For theming and responsive components.
+- **React Query**: For data fetching and caching.
+- **Zustand**: For global state management.
+- **Axios**: For HTTP requests, with interceptors and custom instance.
+- **React Router**: For routing, including private routes for authenticated users.
+- **Husky and ESLint**: Pre-commit hooks and linting for code consistency.
 
-### `npm start`
+## Directory Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Here's an overview of the folder structure:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```plaintext
+src/
+├── components/
+│   └── ui/                       # Reusable UI components
+├── hooks/                        # Custom hooks
+├── http/                         # Axios instance and interceptors
+├── layouts/                      # Layout components (e.g., AuthLayout, DashboardLayout)
+├── pages/                        # Page components for each route
+│   ├── auth/                     # Authentication pages (e.g., login)
+│   └── dashboard/                # Dashboard pages
+├── providers/                    # Context and providers (e.g., Chakra, React Query)
+├── router/                       # Routing setup with private routes
+├── store/                        # Zustand stores
+├── theme/                        # Custom theme and color mode settings
+└── types/                        # TypeScript types for global usage
+```
 
-### `npm test`
+# Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Prerequisites
 
-### `npm run build`
+Node.js >= 14.x
+npm or yarn
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
+   `git clone https://github.com/your-username/react-template.git
+cd react-template`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies:
+   `npm install`
 
-### `npm run eject`
+3. Create an .env file in the root directory and add your environment variables:
+   `REACT_APP_API_BASE_URL=<your_api_base_url>`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. Start the development server:
+   `npm start`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Commands
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+npm start - Run the development server.
+npm run build - Build the project for production.
+npm run lint - Run ESLint to check for linting issues.
+npm run format - Run Prettier to format the code.
+npm test - Run the test suite.
+```
 
-## Learn More
+## Routing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Public Routes: Login and other non-authenticated pages are located in pages/auth.
+Protected Routes: Dashboard and other authenticated pages use PrivateRoute in the router folder to protect these routes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Theming
+
+The theme is configured in theme/index.ts using Chakra UI's extendTheme. Light and dark mode toggle is enabled through ColorModeButton.
+
+## State Management
+
+_Global State:_ Managed using Zustand in the store folder.
+_UI State:_ useUIStore for UI-related state (e.g., sidebar open/close).
+_Auth State:_ useAuthStore for managing user authentication state.
+
+## Axios Configuration
+
+The http/axiosInstance.ts file configures Axios with a base URL, headers, and timeout settings.
+interceptors.ts adds interceptors for adding authorization tokens and handling errors globally.
+
+## Custom Hooks
+
+Write your custom hooks here.
+
+## Husky and Linting
+
+Husky is configured to run Prettier and ESLint checks before commits. This ensures code quality and consistency.
